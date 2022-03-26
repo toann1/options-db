@@ -1,6 +1,6 @@
 CREATE TABLE options_chain (
-    option_name text PRIMARY KEY,
-    days_to_expiration integer PRIMARY KEY,
+    option_name text NOT NULL,
+    dte integer NOT NULL,
     value_date date NOT NULL,
     symbol text NOT NULL,
     underlying text NOT NULL,
@@ -20,5 +20,6 @@ CREATE TABLE options_chain (
     theta real NOT NULL,
     alpha real NOT NULL,
     vega real NOT NULL,
-    rho real NOT NULL
+    rho real NOT NULL,
+    PRIMARY KEY(option_name, dte)
 );
